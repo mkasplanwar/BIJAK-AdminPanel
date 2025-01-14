@@ -1,15 +1,19 @@
 <?php
 session_start();
+
+// Menyertakan file koneksi
+require 'connection.php';
+
 if (!isset($_SESSION['username'])) {
-    header("Location: login.php");
+    header("Location: index.php");
     exit();
 }
 
-$host = 'localhost';
-$username = 'root';
-$password = '';
-$database = 'db_bijak';
-$conn = mysqli_connect($host, $username, $password, $database);
+// $host = 'localhost';
+// $username = 'root';
+// $password = '';
+// $database = 'db_bijak';
+// $conn = mysqli_connect($host, $username, $password, $database);
 
 // Handle Add/Edit Consultant
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
